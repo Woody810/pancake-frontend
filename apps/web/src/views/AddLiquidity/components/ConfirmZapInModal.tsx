@@ -192,7 +192,7 @@ const ConfirmZapInModal: React.FC<React.PropsWithChildren<InjectedModalProps & C
           swapInTokenAmount &&
           currencies[zapSwapTokenField] &&
           currencies[zapSwapOutTokenField] && (
-            <AutoColumn justify="center" gap="16px">
+            <AutoColumn justify="center" gap="8px">
               <ArrowDownIcon color="textSubtle" />
               <AutoRow gap="6px" justify="center">
                 <RowFixed gap="2px">
@@ -200,7 +200,13 @@ const ConfirmZapInModal: React.FC<React.PropsWithChildren<InjectedModalProps & C
                   <CurrencyLogo currency={currencies[zapSwapTokenField]} />
                   <Text>{currencies[zapSwapTokenField].symbol}</Text>
                 </RowFixed>
-                <Text>{t('to')}</Text>
+              </AutoRow>
+              <AutoRow justify="center">
+                <RowFixed gap="2px">
+                  <Text>{t('to')}</Text>
+                </RowFixed>
+              </AutoRow>
+              <AutoRow gap="6px" justify="center">
                 <RowFixed gap="2px">
                   <Text>{swapOutTokenAmount?.toSignificant(6)}</Text>
                   <CurrencyLogo currency={currencies[zapSwapOutTokenField]} />
